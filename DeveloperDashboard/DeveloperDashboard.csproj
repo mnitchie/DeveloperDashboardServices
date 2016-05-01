@@ -134,6 +134,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Models\Auth\AuthContext.cs" />
     <Compile Include="Models\Auth\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
