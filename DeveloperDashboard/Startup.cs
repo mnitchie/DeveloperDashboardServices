@@ -1,4 +1,5 @@
-﻿using Microsoft.Owin;
+﻿using DeveloperDashboard.API.Providers;
+using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 using System;
