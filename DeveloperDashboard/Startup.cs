@@ -13,6 +13,7 @@ namespace DeveloperDashboard.API
 		public void Configuration( IAppBuilder app )
 		{
 			ConfigureOAuth( app );
+
 			HttpConfiguration config = new HttpConfiguration();
 			WebApiConfig.Register( config );
 			app.UseWebApi( config );
@@ -20,7 +21,7 @@ namespace DeveloperDashboard.API
 
 		private void ConfigureOAuth( IAppBuilder app )
 		{
-			OAuthAuthorizationServerOptions OAuthServerOptions = new OAuthAuthorizationServerOptions() {
+			var OAuthServerOptions = new OAuthAuthorizationServerOptions() {
 				AllowInsecureHttp = true,
 				TokenEndpointPath = new PathString( "/token" ),
 				AccessTokenExpireTimeSpan = TimeSpan.FromDays( 1 ),
