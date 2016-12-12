@@ -37,7 +37,6 @@ namespace DeveloperDashboardServices.Repositories.Auth
 		{
 			_ctx.Dispose();
 			_userManager.Dispose();
-
 		}
 
 		private readonly AuthContext _ctx;
