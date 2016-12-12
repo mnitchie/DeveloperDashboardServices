@@ -9,8 +9,10 @@ namespace DeveloperDashboardServices
 	{
 		public void Configuration( IAppBuilder app )
 		{
+			// Used to configure routes etc...
 			var config = new HttpConfiguration();
 			WebApiConfig.Register( config );
+
 			app.UseWebApi( config );
 		}
 	}
