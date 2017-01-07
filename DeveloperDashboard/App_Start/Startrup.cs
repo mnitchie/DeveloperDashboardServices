@@ -1,4 +1,5 @@
-﻿using Microsoft.Owin;
+﻿using DeveloperDashboard.App_Start;
+using Microsoft.Owin;
 using Owin;
 using System.Web.Http;
 
@@ -9,6 +10,8 @@ namespace DeveloperDashboard
 	{
 		public void Configuration( IAppBuilder app )
 		{
+			OAuthConfig.ConfigureOAuth( app );
+
 			var config = new HttpConfiguration();
 			WebApiConfig.Register( config );
 			UnityConfig.RegisterComponents( config );
