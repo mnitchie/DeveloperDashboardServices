@@ -5,15 +5,21 @@ using System.Threading.Tasks;
 
 namespace DeveloperDashboardIdentity
 {
-	public class AuthRepository : IDisposable
+	public interface IAuthRepository
 	{
-		private AuthContext _ctx;
+		Task<IdentityResult> RegisterUser( UserModel userModel );
+		Task<IdentityUser> FindUser( string userName, string password );
+	}
+
+	public class AuthRepository : IAuthRepository, IDisposable
+	{
+		private IdentityDbContext<IdentityUser> _ctx;
 
 		private UserManager<IdentityUser> _userManager;
 
-		public AuthRepository()
+		public AuthRepository( IdentityDbContext<IdentityUser> context )
 		{
-			_ctx = new AuthContext();
+			_ctx = context;
 			_userManager = new UserManager<IdentityUser>( new UserStore<IdentityUser>( _ctx ) );
 		}
 
