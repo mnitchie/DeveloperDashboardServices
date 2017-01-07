@@ -18,6 +18,7 @@ namespace DeveloperDashboard.Controllers
 		// POST api/Account/Register
 		[AllowAnonymous]
 		[Route( "Register" )]
+		[HttpPost]
 		public async Task<IHttpActionResult> Register( UserModel userModel )
 		{
 			if ( !ModelState.IsValid )
@@ -25,9 +26,9 @@ namespace DeveloperDashboard.Controllers
 				return BadRequest( ModelState );
 			}
 
-			IdentityResult result = await _repo.RegisterUser( userModel );
+			var result = await _repo.RegisterUser( userModel );
 
-			IHttpActionResult errorResult = GetErrorResult( result );
+			var errorResult = GetErrorResult( result );
 
 			if ( errorResult != null )
 			{

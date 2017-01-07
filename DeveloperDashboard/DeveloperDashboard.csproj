@@ -156,6 +156,7 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DummyOrders.cs" />
     <Compile Include="Models\Identity\AuthRepository.cs" />
     <Compile Include="Models\Identity\EntityFramework\AuthContext.cs" />
     <Compile Include="Models\Identity\UserModel.cs" />
