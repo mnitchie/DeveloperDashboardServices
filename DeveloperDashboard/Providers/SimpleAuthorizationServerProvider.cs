@@ -9,7 +9,7 @@ namespace DeveloperDashboard.Providers
 	{
 		public override async Task ValidateClientAuthentication( OAuthValidateClientAuthenticationContext context )
 		{
-			context.Validated(); // We only have one client, so just validate it
+			context.Validated();
 		}
 
 		public override async Task GrantResourceOwnerCredentials( OAuthGrantResourceOwnerCredentialsContext context )
