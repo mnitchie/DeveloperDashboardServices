@@ -8,7 +8,7 @@ namespace DeveloperDashboard.Controllers
 	[RoutePrefix( "api/Account" )]
 	public class AccountController : ApiController
 	{
-		private readonly IAuthRepository _repo = null;
+		private readonly IAuthRepository _repo;
 
 		public AccountController( IAuthRepository authRepository )
 		{
