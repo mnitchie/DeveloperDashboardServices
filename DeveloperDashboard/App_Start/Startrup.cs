@@ -11,6 +11,7 @@ namespace DeveloperDashboard
 		{
 			var config = new HttpConfiguration();
 			WebApiConfig.Register( config );
+			UnityConfig.RegisterComponents();
 			app.UseWebApi( config );
 		}
 
