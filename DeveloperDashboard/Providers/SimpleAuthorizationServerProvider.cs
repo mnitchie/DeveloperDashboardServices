@@ -17,13 +17,13 @@ namespace DeveloperDashboard.Providers
 
 			context.OwinContext.Response.Headers.Add( "Access-Control-Allow-Origin", new[] { "*" } );
 
-			using ( var _repo = new AuthRepository() )
+			using ( var repo = new AuthRepository() ) // DI?
 			{
-				var user = await _repo.FindUser( context.UserName, context.Password );
+				var user = await repo.FindUser( context.UserName, context.Password );
 
 				if ( user == null )
 				{
-					context.SetError( "invalid_grant", "The user name or password is incorrect." );
+					context.SetError( "invalid_grant", "The Username or password is incorrect." );
 					return;
 				}
 			}
