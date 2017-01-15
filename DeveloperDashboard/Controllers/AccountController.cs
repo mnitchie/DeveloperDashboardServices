@@ -5,7 +5,7 @@ using System.Web.Http;
 
 namespace DeveloperDashboard.Controllers
 {
-	[RoutePrefix( "api/Account" )]
+	[RoutePrefix( "api/Account" )] // TODO: configure 'api' somewhere, so this doesn't need to go in every controller?
 	public class AccountController : ApiController
 	{
 		private readonly IAuthRepository _repo;
@@ -17,15 +17,11 @@ namespace DeveloperDashboard.Controllers
 
 		// POST api/Account/Register
 		[AllowAnonymous]
-		[Route( "Register" )]
+
+		[Route( "" )] //TODO: Does "" need to be explicit here, or can I just leave out the attribute?
 		[HttpPost]
 		public async Task<IHttpActionResult> Register( UserModel userModel )
 		{
-			if ( !ModelState.IsValid )
-			{
-				return BadRequest( ModelState );
-			}
-
 			var result = await _repo.RegisterUser( userModel );
 
 			var errorResult = GetErrorResult( result );

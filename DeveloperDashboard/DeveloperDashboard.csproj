@@ -160,8 +160,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\ActionFilters\ValidateModelAttribute.cs" />
     <Compile Include="App_Start\OAuthConfig.cs" />
-    <Compile Include="App_Start\Startrup.cs" />
+    <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -199,7 +200,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>64729</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:64729/</IISUrl>
+          <IISUrl>http://localhost:64730/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:64730/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
